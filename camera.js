@@ -37,6 +37,11 @@ var resul="";
 
 var colorAmarill='FFEB3B';
 var colorazul='03A9F4';
+
+var colorverde='37d67a';
+var colormorado='ba68c8';
+var colornaranja='ff9800';
+
 var cahngecol=colorazul;
 function cahngecolor(){
 
@@ -183,6 +188,17 @@ function recargar(){
 location.reload();
 
 }
+var buscax=0;
+var buscay=0;
+function buscarfuncion(){
+
+
+
+       fon.x =buscax+mundox/2*unidadmedida;
+        fon.y =buscay+mundoy/2*-unidadmedida;
+        console.log(fon.x+" x y"+fon.y);
+       
+}
 function create() {
 
    //game.add.tileSprite(0, 0, 1920, 1920, 'background');
@@ -299,11 +315,12 @@ graphics =game.add.graphics(0, 0);
 
 
 
-crearejes(ox,oy);
+//crearejes(ox,oy);
 
 
 
 
+console.log(fon.x,fon.y);
 
 
 
@@ -336,7 +353,7 @@ textsalx.setStyle(styles2);
 
 //console.log( fon.x);
 mirtensparente.x=((mir.x+ox*unidadmedida)-mundox/2)/unidadmedida;
-mirtensparente.y=-((mir.y-(oy)*unidadmedida)-mundoy/2)/unidadmedida;
+mirtensparente.y=-((mir.y+(-oy)*unidadmedida)-mundoy/2)/unidadmedida;
  
 
 mir.rotation = game.physics.arcade.moveToPointer(mir, 60, game.input.activePointer, 500);
@@ -454,10 +471,10 @@ function act_btngraf(){
  
 
 }
+var idcolorline=0;
 
 
-
-
+var idcarteciano=0;
 
 function ecuacion (){
 var cc=0;
@@ -474,6 +491,18 @@ for(var i=1; i<fy1.length;i=i+1){
  arrayl.push(new Phaser.Point(fx1[i],fy1[i]));
 }
 
+
+console.log("cxx "+parseInt(fy1[parseInt(fx1.length/2)])
+  + "  "+ fon.x+"  "+fon.y+ " "+ mundox+"   "+mundoy);
+
+
+if(idcarteciano==0){idcarteciano=idcarteciano+1;
+  buscax=parseInt(fx1[parseInt(fx1.length/2)]);
+ buscay=parseInt(fy1[parseInt(fx1.length/2)]);
+ox=buscax;
+oy=buscay;
+ crearejes(buscax,buscay);
+}
 /*
 if(false){
 var indicefy1=0;
@@ -484,9 +513,20 @@ ox=Math.round(fx1[indicefy1]);
 cambiartextx();
 }
 */
+idcolorline=7;
+if(idcolorline>7){idcolorline=0}
+if(idcolorline==0){cahngecol= colorazul;}
+if(idcolorline==1){cahngecol= colorAmarill;}
+if(idcolorline==2){cahngecol= colormorado;}
+if(idcolorline==3){cahngecol= 'cddc39';}
+  if(idcolorline==4){cahngecol= 'e91e63';}
+if(idcolorline==5){cahngecol= '4dd0e1';}
+if(idcolorline==6){cahngecol= 'dd003a';}
+if(idcolorline==7){cahngecol= '0d47a1';}
 
 
 
+idcolorline=idcolorline+1;
 var  n1=0;
 var n2=0;
 var f=unidadmedida;
