@@ -258,12 +258,12 @@ pstatico.visible=false;
    player.visible=false;
     
 
-     styles = { font: "bold "+String(vw*0.04)+"px Arial", fill: "#ACD6EA", boundsAlignH: "center", boundsAlignV: "middle" };
-  styles2 = { font: "bold "+String(vw*0.04)+"px Arial", fill: "#03A9F4", boundsAlignH: "center", boundsAlignV: "middle" };
+     styles = { font: "bold "+String(22)+"px Arial", fill: "#0693e3", boundsAlignH: "center", boundsAlignV: "middle" };
+  styles2 = { font: "bold "+String(22)+"px Arial", fill: "#03A9F4", boundsAlignH: "center", boundsAlignV: "middle" };
  
     
-  textsalx = game.add.text(vw*0.5+100, vh*0.07, 'x=', styles);
-  textsaly = game.add.text(vw*0.5+100, vh*0.1+20,'y=', styles);
+  textsalx = game.add.text(vw*0.5+30, vh*0.07, 'x=', styles);
+  textsaly = game.add.text(vw*0.5+30, vh*0.1+20,'y=', styles);
 textsaly.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
 textsalx.setShadow(3, 3, 'rgba(0,0,0,0.5)', 2);
 
@@ -513,7 +513,7 @@ ox=Math.round(fx1[indicefy1]);
 cambiartextx();
 }
 */
-idcolorline=7;
+
 if(idcolorline>7){idcolorline=0}
 if(idcolorline==0){cahngecol= colorazul;}
 if(idcolorline==1){cahngecol= colorAmarill;}
